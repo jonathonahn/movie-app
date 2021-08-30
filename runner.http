@@ -1,0 +1,6 @@
+post http://localhost:3000/movies
+content-type: application/json 
+
+{
+  "id" : 1
+}
