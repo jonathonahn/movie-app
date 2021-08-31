@@ -3,8 +3,18 @@ Rails.application.routes.draw do
   get "/all_movies", controller: "movies", action: "all_movies"
   get "/find_by_title/:title", controller: "movies", action: "find_by_title"
   get "/movies_ordered_by_year", controller: "movies", action: "movies_ordered_by_year"
-  get "/movies" => "movies#index"
   get "/movies/query" => "movies#show" #find movie by id, by query
+
+  get "/movies" => "movies#index" #RESTful routes
+  post "/movies" => "movies#create"
   get "/movies/:id" => "movies#show" 
-  post "/movies" => "movies#show" #find movie by id, parameter == :id
+  patch "/movies/:id" => "movies#update"
+  delete "/movies/:id" => "movies#destroy"
+
+  get "/actors" => "actors#index" #RESTful routes
+  post "/actors" => "actors#create"
+  get "/actors/:id" => "actors#show" 
+  patch "/actors/:id" => "actors#update"
+  delete "/actors/:id" => "actors#destroy"
+
 end
