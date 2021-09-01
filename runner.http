@@ -1,6 +1,7 @@
-post http://localhost:3000/movies
+patch http://localhost:3000/actors/2
 content-type: application/json 
 
 {
-  "id" : 1
+  "gender": "male", 
+  "age": 46
 }
