@@ -1,18 +1,18 @@
 class MoviesController < ApplicationController
   def index
     movies = Movie.all 
-    render json: movies.as_json
+    render json: movies
   end
 
   def create
     movie = Movie.new(title: "#{params[:title]}", year: params[:year], plot: "#{params[:plot]}", director: "#{params[:director]}", english: "#{params[:english]}")
     movie.save 
-    render json: movie.as_json
+    render json: movie
   end
 
   def show
     movie = Movie.find(params[:id])
-    render json: movie.as_json
+    render json: movie
   end
 
   def update
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
     movie.english = params[:english] || movie.english
     movie.director = params[:director] || movie.director
     movie.save 
-    render json: movie.as_json
+    render json: movie
   end
 
   def destroy
@@ -37,12 +37,12 @@ class MoviesController < ApplicationController
 
   def show_by_name
     movie = Movie.find_by(title: params[:title])
-    render json: movie.as_json
+    render json: movie
   end
 
   def movies_ordered_by_year
     movies = Movie.order(year: :asc)
-    render json: movies.as_json
+    render json: movies
   end
 
 end

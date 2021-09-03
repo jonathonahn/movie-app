@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   patch "/actors/:id" => "actors#update"
   delete "/actors/:id" => "actors#destroy"
 
+  get "/actors/:id/movie_plot/" => "actors#show_movie_plot"
+
 end
