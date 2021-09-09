@@ -1,7 +1,8 @@
-patch http://localhost:3000/actors/2
+post http://localhost:3000/actors/
 content-type: application/json 
 
 {
-  "gender": "male", 
-  "age": 46
+  "first_name": "a",
+  "last_name": "b",
+  "age": 2"
 }

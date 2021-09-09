@@ -6,8 +6,11 @@ class MoviesController < ApplicationController
 
   def create
     movie = Movie.new(title: "#{params[:title]}", year: params[:year], plot: "#{params[:plot]}", director: "#{params[:director]}", english: "#{params[:english]}")
-    movie.save 
-    render json: movie
+    if movie.save 
+      render json: movie
+    else
+      render json: movie.errors.full_messages
+    end
   end
 
   def show
@@ -22,8 +25,11 @@ class MoviesController < ApplicationController
     movie.plot = params[:plot] || movie.plot 
     movie.english = params[:english] || movie.english
     movie.director = params[:director] || movie.director
-    movie.save 
-    render json: movie
+    if movie.save 
+      render json: movie
+    else
+      render json: movie.errors.full_messages
+    end
   end
 
   def destroy
