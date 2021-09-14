@@ -1,8 +1,12 @@
-post http://localhost:3000/actors/
+POST http://localhost:3000/actors/
 content-type: application/json 
 
 {
   "first_name": "a",
   "last_name": "b",
-  "age": 2"
+  "age": "2"
 }
+
+### 
+
+GET http://localhost:3000/movies/
