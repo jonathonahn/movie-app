@@ -19,4 +19,7 @@ Rails.application.routes.draw do
 
   get "/actors/:id/movie_plot/" => "actors#show_movie_plot"
 
+  post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
+
 end
