@@ -31,3 +31,7 @@ Content-Type: application/json
   "email": "test@test.com",
   "password": "password"
 }
+
+### movie_genre create 
+
+GET http://localhost:3000/movie_genres?movie_id=2&genre_id=4
